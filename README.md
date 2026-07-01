@@ -9,7 +9,7 @@
 [![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows&logoColor=white)](https://github.com/EimJacky/CodePulse/releases/latest)
 [![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?logo=tauri&logoColor=white)](https://tauri.app/)
 [![Latest Release](https://img.shields.io/github/v/release/EimJacky/CodePulse?color=2F80ED&label=release)](https://github.com/EimJacky/CodePulse/releases/latest)
-[![GitHub Stars](https://img.shields.io/github/stars/EimJacky/CodePulse?style=flat&color=F6C343)](https://github.com/EimJacky/CodePulse/stargazers)
+[![Star CodePulse](https://img.shields.io/badge/Star-CodePulse-F6C343?logo=github&logoColor=white)](https://github.com/EimJacky/CodePulse)
 
 <br>
 
