@@ -1,0 +1,35 @@
+:root { font-family: Inter, "Segoe UI Variable", "Microsoft YaHei UI", sans-serif; color: #182746; font-synthesis: none; background: transparent; }
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; min-height: 100%; margin: 0; overflow: hidden; background: transparent; }
+button, input { font: inherit; }
+.shell { width: 276px; padding: 7px; --surface-opacity: .96; }
+.widget { width: 262px; height: 68px; overflow: hidden; border: 1px solid rgba(125,179,255,.28); border-radius: 34px; background: rgba(252,254,255,var(--surface-opacity)); box-shadow: 0 12px 32px rgba(53,118,206,.17),0 2px 8px rgba(66,126,202,.1),inset 0 1px 0 #fff; backdrop-filter: blur(18px) saturate(1.18); transition: height .34s cubic-bezier(.2,.82,.2,1),border-radius .34s ease; user-select: none; }
+.widget.expanded { height: 326px; border-radius: 25px; box-shadow: 0 18px 45px rgba(44,103,181,.2); }
+.widget.expanded.settings-open { height: 400px; }
+.capsule { height: 67px; display: flex; align-items: center; padding: 0 17px 0 13px; cursor: default; }
+.headline { min-width: 0; margin-left: 12px; flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.brand-row { display: flex; align-items: center; gap: 9px; }
+.brand-row strong { font-size: 20px; line-height: 22px; letter-spacing: -.45px; font-weight: 720; }
+.status-label { color: #2680ff; font-size: 14px; font-weight: 620; line-height: 18px; }
+.signal { width: 7px; height: 7px; border-radius: 50%; background: #2784ff; box-shadow: 0 0 0 3px rgba(39,132,255,.08); }
+.toggle-button { width: 44px; height: 44px; margin-right: -11px; display: grid; place-items: center; border: 0; border-radius: 50%; color: #9aacbf; background: transparent; cursor: pointer; transition: color .16s ease, background .16s ease, transform .1s ease; }
+.toggle-button:hover { color: #277df2; background: rgba(39, 125, 242, .08); }
+.toggle-button:active { transform: scale(.9); background: rgba(39, 125, 242, .14); }
+.toggle-button:focus-visible { outline: 2px solid rgba(39, 125, 242, .42); outline-offset: -3px; }
+.chevron { transition: transform .24s cubic-bezier(.2, .8, .2, 1); }.chevron.rotated { transform: rotate(90deg); }
+.pulse-mark { position: relative; width: 48px; height: 48px; display: grid; place-items: center; flex: 0 0 48px; }
+.mark-core { position: relative; z-index: 3; width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; color: white; font-size: 19px; font-weight: 750; background: linear-gradient(145deg,#72c9ff 5%,#277cff 76%); box-shadow: 0 4px 10px rgba(40,123,247,.3),inset 0 1px 1px rgba(255,255,255,.5); }
+.orbit { position: absolute; border-radius: 50%; inset: 2px; }.orbit-one { background: repeating-conic-gradient(from 5deg,rgba(62,155,255,.8) 0 6deg,transparent 6deg 12deg); mask: radial-gradient(circle,transparent 58%,#000 59% 72%,transparent 73%); }.orbit-two { inset: 6px; border: 2px dashed rgba(95,200,255,.58); }
+.is-animated.status-thinking .orbit-one,.is-animated.status-executing .orbit-one { animation: spin 2.1s linear infinite; }.is-animated.status-executing .mark-core { animation: pulse 1.45s ease-in-out infinite; }
+.status-waitingApproval .mark-core,.status-waitingApproval .signal { background: #f59b23; }.is-animated.status-waitingApproval .signal { animation: attention 1.1s ease-in-out infinite; }.status-completed .mark-core,.status-completed .signal { background: #21ad75; }.status-failed .mark-core,.status-failed .signal { background: #e55757; }.status-offline .mark-core,.status-offline .signal { background: #9aa9b8; }
+.status-waitingApproval .status-label { color: #c9780c; }.status-completed .status-label { color: #168b5c; }.status-failed .status-label { color: #cc4141; }.status-offline .status-label { color: #7d8d9d; }
+.panel { opacity: 0; transform: translateY(-4px); padding: 0 17px 15px; pointer-events: none; transition: opacity .18s ease .04s,transform .25s ease; }.expanded .panel { opacity: 1; transform: none; pointer-events: auto; }
+.panel-rule { height: 1px; background: linear-gradient(90deg,transparent,rgba(124,160,201,.25) 12%,rgba(124,160,201,.25) 88%,transparent); }
+.section-label { height: 38px; display: flex; align-items: center; justify-content: space-between; color: #71839a; font-size: 11px; font-weight: 650; }
+.health { padding-left: 9px; position: relative; }.health::before { content:""; position:absolute; left:0; top:5px; width:5px; height:5px; border-radius:50%; background:#27b476; }.health-degraded::before,.health-unavailable::before { background:#ef9e28; }
+.thread-list { height: 126px; overflow: hidden; }.thread { display:flex; align-items:flex-start; gap:10px; min-height:54px; padding:8px 2px; border-bottom:1px solid rgba(114,145,181,.11); }.thread-dot { margin-top:6px; width:7px; height:7px; flex:none; border-radius:50%; background:#3487f6; }.thread-dot.status-failed{background:#e55757}.thread-dot.status-waitingApproval{background:#f59b23}.thread-dot.status-completed{background:#21ad75}
+.thread div { min-width:0; display:flex; flex-direction:column; gap:3px; }.thread strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#24334c; font-size:12px; font-weight:650; }.thread span { color:#8999aa; font-size:11px; }.empty { margin:20px 0; color:#8999aa; text-align:center; font-size:12px; }
+.actions { height:49px; display:flex; gap:5px; align-items:flex-end; border-top:1px solid rgba(114,145,181,.14); }.actions button { height:31px; display:inline-flex; align-items:center; justify-content:center; gap:5px; border:0; border-radius:10px; color:#5d718a; background:transparent; font-size:11px; font-weight:620; cursor:pointer; }.actions button:hover { color:#176fe5; background:rgba(35,124,243,.08); }.actions button:first-child { flex:1; color:white; background:#237df2; box-shadow:0 4px 12px rgba(35,125,242,.2); }.actions .icon-button { width:31px; }
+.settings-pane { height:74px; padding:7px 1px; display:grid; grid-template-columns:1fr 1fr; gap:7px 12px; border-top:1px solid rgba(114,145,181,.12); }.settings-pane label { display:flex; align-items:center; justify-content:space-between; gap:5px; color:#657990; font-size:10px; }.settings-pane input[type=range]{width:55px;accent-color:#237df2}.settings-pane input[type=checkbox]{width:13px;height:13px;accent-color:#237df2}
+@keyframes spin { to { transform:rotate(360deg) } } @keyframes pulse { 50% { transform:scale(.9); box-shadow:0 2px 18px rgba(40,123,247,.48) } } @keyframes attention { 50% { transform:scale(1.55); opacity:.55 } }
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}}

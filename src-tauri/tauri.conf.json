@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "CodePulse",
+  "version": "0.1.2",
+  "identifier": "com.codepulse.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [{
+      "label": "main",
+      "title": "CodePulse",
+      "width": 276,
+      "height": 82,
+      "minWidth": 276,
+      "maxWidth": 276,
+      "minHeight": 82,
+      "maxHeight": 414,
+      "resizable": false,
+      "decorations": false,
+      "transparent": true,
+      "alwaysOnTop": true,
+      "skipTaskbar": true,
+      "shadow": false,
+      "focus": false
+    }],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "icon": ["icons/icon.ico"],
+    "targets": ["nsis"],
+    "resources": {
+      "resources/WebView2Loader.dll": "WebView2Loader.dll"
+    },
+    "shortDescription": "Codex desktop work indicator",
+    "longDescription": "A lightweight floating status light for Codex on Windows."
+  }
+}
