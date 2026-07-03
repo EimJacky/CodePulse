@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="50" x2="430" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102342"/>
+      <stop offset="1" stop-color="#061227"/>
+    </linearGradient>
+    <radialGradient id="core" cx="0" cy="0" r="1" gradientTransform="translate(235 216) rotate(52) scale(104)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset=".19" stop-color="#B8F4FF"/>
+      <stop offset=".48" stop-color="#2BC8FF"/>
+      <stop offset=".74" stop-color="#2478FF"/>
+      <stop offset="1" stop-color="#073CA7"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="19" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bg)"/>
+  <g fill="none" stroke-linecap="round" stroke-width="32">
+    <path d="M256 93a163 163 0 0 1 78 20" stroke="#79B8FF"/>
+    <path d="M380 150a163 163 0 0 1 35 69" stroke="#3887FF"/>
+    <path d="M414 289a163 163 0 0 1-38 70" stroke="#65D4FF"/>
+    <path d="M326 404a163 163 0 0 1-76 15" stroke="#3B89FF"/>
+    <path d="M177 400a163 163 0 0 1-62-48" stroke="#52D7F5"/>
+    <path d="M94 282a163 163 0 0 1 16-78" stroke="#2F82FF"/>
+    <path d="M145 146a163 163 0 0 1 50-35" stroke="#82C8FF"/>
+  </g>
+  <circle cx="256" cy="256" r="98" fill="#1D79FF" opacity=".34" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="82" fill="url(#core)" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="119" fill="none" stroke="#6FB6FF" stroke-opacity=".42" stroke-width="8"/>
+</svg>

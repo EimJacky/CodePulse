@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "CodePulse",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "identifier": "com.codepulse.desktop",
   "build": {
     "beforeDevCommand": "npm run dev",
@@ -10,23 +10,44 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "windows": [{
-      "label": "main",
-      "title": "CodePulse",
-      "width": 276,
-      "height": 82,
-      "minWidth": 276,
-      "maxWidth": 276,
-      "minHeight": 82,
-      "maxHeight": 414,
-      "resizable": false,
-      "decorations": false,
-      "transparent": true,
-      "alwaysOnTop": true,
-      "skipTaskbar": true,
-      "shadow": false,
-      "focus": false
-    }],
+    "windows": [
+      {
+        "label": "main",
+        "title": "CodePulse",
+        "width": 280,
+        "height": 72,
+        "minWidth": 280,
+        "maxWidth": 560,
+        "minHeight": 72,
+        "maxHeight": 360,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "shadow": false,
+        "focus": false
+      },
+      {
+        "label": "settings",
+        "title": "CodePulse 设置",
+        "url": "index.html?view=settings",
+        "width": 720,
+        "height": 560,
+        "minWidth": 720,
+        "maxWidth": 720,
+        "minHeight": 560,
+        "maxHeight": 560,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "visible": false,
+        "center": true,
+        "skipTaskbar": true,
+        "shadow": true,
+        "focus": true
+      }
+    ],
     "security": { "csp": null }
   },
   "bundle": {
@@ -36,7 +57,7 @@
     "resources": {
       "resources/WebView2Loader.dll": "WebView2Loader.dll"
     },
-    "shortDescription": "Codex desktop work indicator",
-    "longDescription": "A lightweight floating status light for Codex on Windows."
+    "shortDescription": "Codex desktop companion and status indicator",
+    "longDescription": "A lightweight floating companion that keeps Codex status visible on Windows."
   }
 }
